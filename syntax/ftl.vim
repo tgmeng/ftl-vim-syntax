@@ -1,10 +1,10 @@
 " Vim syntax file
 " Language:    FreeMarker Template Language (FTL)
-" Maintainer:  Stephan Müller <stephan@notatoaster.org>
+" Maintainer:  Stephan MÃ¼ller <stephan@notatoaster.org>
 " Last Change: 2008 Oct 22
 "
 " Changelog:
-" 1.0 Stephan Müller: Original version
+" 1.0 Stephan MÃ¼ller: Original version
 " 1.1 tyru:
 "   Added Feature:
 "     * Highlight html tags.
@@ -18,10 +18,14 @@
 " 1.2 tyru:
 "     * Sorry, remove HTML highlight feature.
 "       because ":setfiletype html.ftl" is enough.
+" 1.3 tgmeng
+"   Fixed Issues:
+"     * ":setfiletype html.ftl" no use
+"     * set fileencoding=utf-8
 "
 " Licensed under the MIT License (MIT):
 "
-" Copyright (c) 2008 Stephan Müller
+" Copyright (c) 2008 Stephan MÃ¼ller
 "
 " Permission is hereby granted, free of charge, to any person obtaining a copy
 " of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +49,7 @@
 " For version 6.x: Quit when a syntax file was already loaded
 if version < 600
   syntax clear
-elseif exists('b:current_syntax')
+elseif exists('b:current_syntax') && b:current_syntax ==? 'ftl'
   finish
 endif
 
